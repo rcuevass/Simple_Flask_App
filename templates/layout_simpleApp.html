@@ -1,0 +1,29 @@
+<!doctype html>
+<title>A short quiz</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_simpleApp.css')}}'>
+<div class=page>
+  <h1>Question #{{num}}</h1>
+
+  <div class=metanav>
+
+    {{question}}
+
+    <h4>
+      <!The field action set to 'nextQ_simpleApp' makes reference to the function nextQ_simpleApp
+	defined in the driver Python code 'application_flask.py'>
+      <form id='answerform_simpleApp' method='post' action='nextQ_simpleApp' >
+        <p>
+          Answer: <br />
+          <input type='radio' name='answer_from_layout_simpleApp' value={{ans1}} /> {{ans1}} <br />
+          <input type='radio' name='answer_from_layout_simpleApp' value={{ans2}} /> {{ans2}} <br />
+          <input type='radio' name='answer_from_layout_simpleApp' value={{ans3}} /> {{ans3}} <br />
+        </p>
+
+        <p>
+          <input type='submit' value='NextButton_simpleApp' />
+        </p>
+      </form>
+    </h4>
+  </div>
+</div>
+

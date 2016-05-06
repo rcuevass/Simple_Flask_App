@@ -1,0 +1,38 @@
+<!doctype html>
+<title>A short quiz</title>
+<! In the next line, style_simpleApp is the style to be displayed in the corresponding 
+! web app. Such a file, 'style_simpleApp.css' is stored in the /static subdirectory>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style_simpleApp.css')}}'>
+<div class=page>
+  <h1>A short quiz</h1>
+  <div class=metanav>
+
+    <h4>
+      <!Notice that in the next line we have included the variable num to display the number of questions
+	that will be asked in the web app. This variable is declared in the Python code that drives this
+        web app, application_flask.py>
+      You will be asked {{num}} a series of questions.
+      Please answer them to the best of your ability.
+    </h4>
+      <!In the following line, the action='index_simpleApp' looks for a URL in the arguments of 
+	the function @app_simpleApp.route(). This functions is contained in the Python driver code
+	application_flask.py>
+    <form id='userinfoform_simpleApp' method='post' action='index_simpleApp' >
+      <p>
+      <!In what follows, 'name' in the 'input' tags are identifiers for their respective user-input fields
+	in the form that has been named as 'userinfoform_simpleApp'
+ 	The variables 'name_simpleApp' and 'age_simpleApp' are variable that are used in the Python driver
+	code application_flask.py; they are used to poupulate the dictionary app_simpleApp.vars set in the
+	same Python code>
+    Name: <input type='text' name='name_simpleApp' />
+      </p>
+      <p>
+    Age: <input type='text' name='age_simpleApp' />
+      </p>
+      <p>
+    <input type='submit' value='Submit_simpleApp' />
+      </p>
+    </form>
+
+  </div>
+</div>
